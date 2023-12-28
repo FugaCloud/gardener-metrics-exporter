@@ -211,7 +211,7 @@ func getGardenMetricsDefinitions() map[string]*prometheus.Desc {
 			"Min node count of a worker Shoot.",
 			[]string{
 				"name",
-				"project"
+				"project",
 				"worker_group",
 				"worker_machine_type",
 			},

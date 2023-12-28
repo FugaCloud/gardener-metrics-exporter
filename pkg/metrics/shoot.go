@@ -385,7 +385,9 @@ func (c gardenMetricsCollector) collectShootNodeMetrics(shoot *gardenv1beta1.Sho
 			return
 		}
 		ch <- metric
+	}
 
+	for _, worker := range workers {
 		// Expose metrics. Start with max worker node count.
 		metric, err := prometheus.NewConstMetric(
 			c.descs[metricGardenShootWorkerNodeMaxTotal],
